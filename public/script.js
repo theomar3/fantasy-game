@@ -3,15 +3,23 @@ if (this.Fantasy === undefined) this.Fantasy = {};
 
 (function(context) {
 
+  var $blueName = $('.right-dude .name');
+
   function generateNames() {
-    var goodNames = ['Goody Gumdrops', 'Hero Number 1', 'Blue Justice', 'Blue Angel'];
-    var badNames = ['Timmay Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil'];
+    var goodNames = ['Goody Gumdrops', 'Hero Number 1', 'Blue Fist of Justice', 'Blue Angel Man'];
+    var badNames = ['Timmay Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil Man'];
 
     var goodNamesSelector = Math.floor(Math.random() * badNames.length);
     var badNamesSelector = Math.floor(Math.random() * badNames.length);
 
     var blueDudeName = goodNames[goodNamesSelector];
     var redDudeName = badNames[badNamesSelector];
+
+    var $templateHtml = $('#fighter-template');
+    var htmlFactory = _.template($templateHtml);
+    // CONTINUE HERE!!
+
+    $blueName.text(blueDudeName);
   }
 
   function getRandom(min, max) {
