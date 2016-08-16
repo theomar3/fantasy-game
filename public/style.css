@@ -45,6 +45,68 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  background-image: url(concrete_seamless.png); }
+
+.container {
+  margin: 0px auto;
+  max-width: 60%;
+  background-color: white; }
+
 h1 {
   font-size: 2em;
-  color: blue; }
+  color: blue;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 30px; }
+
+span {
+  color: red; }
+
+.sprite {
+  background-image: url(nes-final-fantasy-trans.png);
+  background-size: 800%;
+  margin: 10px;
+  height: 90px;
+  width: 60px; }
+
+.right-dude {
+  display: inline-block;
+  width: 20%;
+  margin-left: 35%; }
+
+.left-dude {
+  display: inline-block;
+  width: 20%; }
+
+.blue-dude {
+  background-position: -5px 94px;
+  transform: scaleX(-1); }
+
+.red-dude {
+  background-color: black; }
+
+.name, .hp {
+  font-family: cursive;
+  font-size: 1.2em;
+  border-bottom: 1px solid purple;
+  margin-right: 20%;
+  padding-right: 20%;
+  line-height: 1.1em; }
+
+.battle-status {
+  font-size: 2em;
+  font-family: Arial;
+  color: orange;
+  text-align: center;
+  margin-top: 40px; }
+
+.start-button {
+  padding: 20px;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  margin-left: 45%;
+  margin-top: 30px;
+  font-size: 1.1em;
+  text-align: center; }
