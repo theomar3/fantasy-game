@@ -3,46 +3,74 @@ if (this.Fantasy === undefined) this.Fantasy = {};
 
 (function(context) {
 
-  var $blueName = $('.right-dude .name');
+  function generateGoodNames() {
 
-  function generateNames() {
-    var goodNames = ['Goody Gumdrops', 'Hero Number 1', 'Blue Fist of Justice', 'Blue Angel Man'];
-    var badNames = ['Timmay Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil Man'];
-
-    var goodNamesSelector = Math.floor(Math.random() * badNames.length);
-    var badNamesSelector = Math.floor(Math.random() * badNames.length);
-
-    var blueDudeName = goodNames[goodNamesSelector];
-    var redDudeName = badNames[badNamesSelector];
-
-    var $templateHtml = $('#fighter-template');
+    var $templateHtml = $('#fighter-template-one').html();
     var htmlFactory = _.template($templateHtml);
-    // CONTINUE HERE!!
+    var $rightDude = $('.right-dude');
 
-    $blueName.text(blueDudeName);
+    var html = htmlFactory(
+      {
+        goodName: context.generateGoodGuy()
+      }
+    );
+    $rightDude.append(html);
+
   }
 
-  function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  function generateBadNames() {
+
+    var $templateHtml = $('#fighter-template-two').html();
+    var htmlFactory = _.template($templateHtml);
+    var $leftDude = $('.left-dude');
+
+    var html = htmlFactory(
+      {
+        badName: context.generateBadGuy()
+      }
+    );
+    $leftDude.append(html);
+
   }
 
-  function generateHP() {
-    var blueRandomHP = getRandom(5, 10);
-    var redRandomHP = getRandom(5, 10);
-
-    var blueDudeHP = blueRandomHP;
-    console.log('Blue Dude:', blueDudeHP);
 
 
-    var redDudeHP = redRandomHP;
-    console.log('Red Dude:' ,redDudeHP);
+  function generateGoodHP() {
+    var $templateHtml = $('#fighter-template-one').html();
+    var htmlFactory = _.template($templateHtml);
+    var $rightDude = $('.right-dude');
+
+    var html = htmlFactory(
+      {
+        goodHP: context.generateGoodHP()
+      }
+    );
+    $rightDude.append(html);
+
+
+  }
+
+  function generateBadHP() {
+    var $templateHtml = $('#fighter-template-two').html();
+    var htmlFactory = _.template($templateHtml);
+    var $leftDude = $('.left-dude');
+
+    var html = htmlFactory(
+      {
+        badHP: context.generateBadHP()
+      }
+    );
+    $leftDude.append(html);
+
 
   }
 
   function start() {
 
-    generateNames();
-    generateHP();
+    generateGoodNames();
+    generateBadNames();
+    generateGoodHP();
+    generateBadHP();
 
   }
 

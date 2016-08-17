@@ -15,9 +15,10 @@
 
       </div>
 
-      <script type="text/template" id="fighter-template">
-        <p class="name"><%= name %> </p>
-        <p class="hp"> <%= hp %> </p>
+      <script type="text/template" id="fighter-template-one">
+        <p class="name"><%= goodName %> </p>
+        <p class="hp"><%= goodHP %> </p>
+
       </script>
 
       <div class="left-dude">
@@ -25,9 +26,10 @@
 
       </div>
 
-      <script type="text/template" id="fighter-template">
-        <p class="name"><%= name  %> </p>
-        <p class="hp"> <%= hp  %> </p>
+      <script type="text/template" id="fighter-template-two">
+        <p class="name"><%= badName  %> </p>
+        <p class="hp"><%= badHP  %> </p>
+
       </script>
 
       <p class="battle-status">
@@ -41,6 +43,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+    <script src="character-generator.js"></script>
     <script src="script.js"></script>
     <script> Fantasy.start();</script>
   </body>
