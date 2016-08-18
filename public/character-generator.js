@@ -3,20 +3,28 @@ if (this.Fantasy === undefined) this.Fantasy = {};
 
 (function(context) {
 
-  function generateGoodGuy() {
+  function generateRandomHPBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function generateGoodNames(){
     var goodNames = ['Goody Gumdrops', 'Hero Number 1', 'Blue Fist of Justice', 'Blue Angel Man'];
     var goodNamesSelector = Math.floor(Math.random() * goodNames.length);
 
     var blueDudeName = goodNames[goodNamesSelector];
 
     return blueDudeName;
-
-
   }
 
-  function generateBadGuy() {
-    var badNames = ['Timmay Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil Man'];
+  function generateGoodGuy() {
+    var goodName = generateGoodNames();
+    var hp = generateRandomHPBetween(5, 10);
 
+    return {goodName: goodName, hp: hp }
+  }
+
+  function generateBadNames() {
+    var badNames = ['Timmay Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil Man'];
     var badNamesSelector = Math.floor(Math.random() * badNames.length);
 
     var redDudeName = badNames[badNamesSelector];
@@ -24,29 +32,17 @@ if (this.Fantasy === undefined) this.Fantasy = {};
     return redDudeName;
   }
 
-  function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  function generateBadGuy() {
+    var badName = generateBadNames();
+    var hp = generateRandomHPBetween(5, 10);
+
+    return {badName: badName, hp: hp }
   }
 
-  function generateGoodHP() {
-    var blueRandomHP = getRandom(5, 10);
-
-    return blueRandomHP;
-
-  }
-
-  function generateBadHP() {
-    var redRandomHP = getRandom(5, 10);
-
-    return redRandomHP;
-
-}
 
 
   context.generateGoodGuy = generateGoodGuy;
   context.generateBadGuy = generateBadGuy;
-  context.generateGoodHP = generateGoodHP;
-  context.generateBadHP = generateBadHP;
 
 
 })(window.Fantasy);
