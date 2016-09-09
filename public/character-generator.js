@@ -3,6 +3,8 @@ if (this.Fantasy === undefined) this.Fantasy = {};
 
 (function(context) {
 
+
+
   function generateRandomHPBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
@@ -24,7 +26,7 @@ if (this.Fantasy === undefined) this.Fantasy = {};
   }
 
   function generateBadNames() {
-    var badNames = ['Timmay Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil Man'];
+    var badNames = ['The Evil Gingerman', 'Villian Number 1', 'Red Destruction', 'Red Devil Man'];
     var badNamesSelector = Math.floor(Math.random() * badNames.length);
 
     var redDudeName = badNames[badNamesSelector];

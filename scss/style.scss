@@ -47,8 +47,31 @@ span {
   transform: scaleX(-1);
 }
 
+.right-dude .hurt {
+  background-position: -805px 94px;
+  transform: scaleX(-1);
+}
+
+.right-dude .dead {
+  background-size: 500%;
+  background-position: -350px 94px;
+  transform: scaleX(-1);
+  width: 87px;
+
+}
+
 .red-dude {
   background-color: black;
+}
+
+.left-dude .hurt {
+  background-position: -805px 0px;
+}
+
+.left-dude .dead {
+  background-position: -350px 0px;
+  background-size: 500%;
+  width: 87px;
 }
 
 .name, .hp {
